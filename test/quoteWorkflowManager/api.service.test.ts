@@ -1,6 +1,6 @@
 import { ServiceBroker } from 'moleculer';
 import * as request from 'supertest';
-import { Quote } from '../../src/quoteDataAccess/model/Quote';
+import { Quote } from '../../src/quoteResourceAccess/model/Quote';
 
 describe('quote API', () => {
     const TIMEOUT = 2000;
@@ -52,7 +52,7 @@ describe('quote API', () => {
 describe('quote business logic', () => {
     const TIMEOUT = 2000;
     jest.setTimeout(TIMEOUT);
-    const broker = new ServiceBroker({logLevel: 'info', namespace: 'quote-api'});
+    const broker = new ServiceBroker({logLevel: 'info', namespace: 'quote-service'});
     const quoteWorkflowManager = require('../../src/quoteWorkflowManager/endpoint.service');
     broker.createService(quoteWorkflowManager);
     const VALID_DATA = {age: 40, name: 'dan'};
