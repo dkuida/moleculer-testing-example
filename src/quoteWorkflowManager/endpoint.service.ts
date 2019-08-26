@@ -9,8 +9,9 @@ class QuoteWorkflowManager extends moleculer.Service {
             age: {type: 'number'}
         }
     })
-    public baseQuote(_ctx: moleculer.Context) {
-        //
+    public async baseQuote(_ctx: moleculer.Context) {
+        const quote = await this.broker.call('QuoteData.find');
+        return quote[0];
     }
 }
 
