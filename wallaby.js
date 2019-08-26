@@ -12,7 +12,7 @@ module.exports = function (wallaby) {
             '!test/**/*.test.ts?(x)'
         ],
         tests: [
-            'test/**/*.test.js?(x)',
+            // 'test/**/*.test.js?(x)',
             'test/**/*.test.ts?(x)'
         ],
 
